@@ -17,21 +17,21 @@ audio/
   DNS2020/
     noreverb/
       noisy/
-        sample_01.wav
+        fileid_101.wav
       clean/
-        sample_01.wav
+        fileid_101.wav
       our/
-        sample_01.wav
+        fileid_101.wav
 
 spectrograms/
   DNS2020/
     noreverb/
       noisy/
-        sample_01.png
+        fileid_101.png
       clean/
-        sample_01.png
+        fileid_101.png
       our/
-        sample_01.png
+        fileid_101.png
 ```
 
 Add more samples by keeping the same filename stem across `noisy`, `clean`, and `our`.

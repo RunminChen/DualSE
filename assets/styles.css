@@ -193,6 +193,22 @@ a {
   font-weight: 700;
 }
 
+.spectrogram-placeholder {
+  display: grid;
+  place-items: center;
+}
+
+.audio-placeholder {
+  display: grid;
+  min-height: 44px;
+  place-items: center;
+  border: 1px dashed rgba(15, 118, 110, 0.38);
+  border-radius: 999px;
+  color: rgba(23, 32, 41, 0.68);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
 audio {
   width: 100%;
   min-height: 44px;
