@@ -1,0 +1,47 @@
+name: Build demo assets
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "audio/**/*.wav"
+      - "scripts/build_demo_assets.py"
+      - ".github/workflows/build-demo-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-demo-assets-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Generate spectrograms and manifest
+        run: python scripts/build_demo_assets.py
+
+      - name: Commit generated assets
+        run: |
+          if git diff --quiet -- samples.json spectrograms; then
+            echo "No generated asset changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add samples.json spectrograms
+          git commit -m "Build demo spectrograms"
+          git push

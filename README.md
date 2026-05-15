@@ -36,6 +36,12 @@ spectrograms/
 
 Add more samples by keeping the same filename stem across `noisy`, `clean`, and `our`.
 
+## Automatic Spectrograms
+
+GitHub Actions builds the public demo assets automatically. After you upload new `.wav` files under `audio/DNS2020/noreverb/noisy`, `audio/DNS2020/noreverb/clean`, or `audio/DNS2020/noreverb/our`, the workflow generates matching spectrogram PNG files under `spectrograms/` and refreshes `samples.json`.
+
+The demo page reads `samples.json`, so new uploaded audio appears without editing `index.html`.
+
 ## Repository Scope
 
 - Public now: README, demo page, processed audio examples, and spectrogram images.

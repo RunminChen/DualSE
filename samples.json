@@ -1,0 +1,44 @@
+{
+  "dataset": "DNS2020",
+  "condition": "noreverb",
+  "versions": [
+    "noisy",
+    "clean",
+    "our"
+  ],
+  "samples": [
+    {
+      "id": "fileid_101",
+      "audio": {
+        "noisy": "audio/DNS2020/noreverb/noisy/fileid_101.wav",
+        "clean": "audio/DNS2020/noreverb/clean/fileid_101.wav"
+      },
+      "spectrograms": {
+        "noisy": "spectrograms/DNS2020/noreverb/noisy/fileid_101.png",
+        "clean": "spectrograms/DNS2020/noreverb/clean/fileid_101.png"
+      }
+    },
+    {
+      "id": "fileid_102",
+      "audio": {
+        "noisy": "audio/DNS2020/noreverb/noisy/fileid_102.wav",
+        "clean": "audio/DNS2020/noreverb/clean/fileid_102.wav"
+      },
+      "spectrograms": {
+        "noisy": "spectrograms/DNS2020/noreverb/noisy/fileid_102.png",
+        "clean": "spectrograms/DNS2020/noreverb/clean/fileid_102.png"
+      }
+    },
+    {
+      "id": "fileid_104",
+      "audio": {
+        "noisy": "audio/DNS2020/noreverb/noisy/fileid_104.wav",
+        "clean": "audio/DNS2020/noreverb/clean/fileid_104.wav"
+      },
+      "spectrograms": {
+        "noisy": "spectrograms/DNS2020/noreverb/noisy/fileid_104.png",
+        "clean": "spectrograms/DNS2020/noreverb/clean/fileid_104.png"
+      }
+    }
+  ]
+}

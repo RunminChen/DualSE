@@ -32,100 +32,7 @@
           <h2>Listening Samples</h2>
         </div>
 
-        <div class="sample-grid">
-          <article class="sample-card">
-            <h3>fileid_101</h3>
-            <div class="sample-versions">
-              <figure class="version-card">
-                <figcaption>Noisy</figcaption>
-                <object class="spectrogram" data="spectrograms/DNS2020/noreverb/noisy/fileid_101.png" type="image/png" aria-label="DNS2020 noreverb noisy fileid 101 spectrogram">
-                  <span>Spectrogram pending</span>
-                </object>
-                <audio controls preload="none">
-                  <source src="audio/DNS2020/noreverb/noisy/fileid_101.wav" type="audio/wav">
-                </audio>
-              </figure>
-              <figure class="version-card">
-                <figcaption>Clean</figcaption>
-                <object class="spectrogram" data="spectrograms/DNS2020/noreverb/clean/fileid_101.png" type="image/png" aria-label="DNS2020 noreverb clean fileid 101 spectrogram">
-                  <span>Spectrogram pending</span>
-                </object>
-                <audio controls preload="none">
-                  <source src="audio/DNS2020/noreverb/clean/fileid_101.wav" type="audio/wav">
-                </audio>
-              </figure>
-              <figure class="version-card version-card-highlight">
-                <figcaption>Our</figcaption>
-                <div class="spectrogram spectrogram-placeholder">
-                  <span>Coming soon</span>
-                </div>
-                <div class="audio-placeholder">Enhanced audio pending</div>
-              </figure>
-            </div>
-          </article>
-
-          <article class="sample-card">
-            <h3>fileid_102</h3>
-            <div class="sample-versions">
-              <figure class="version-card">
-                <figcaption>Noisy</figcaption>
-                <object class="spectrogram" data="spectrograms/DNS2020/noreverb/noisy/fileid_102.png" type="image/png" aria-label="DNS2020 noreverb noisy fileid 102 spectrogram">
-                  <span>Spectrogram pending</span>
-                </object>
-                <audio controls preload="none">
-                  <source src="audio/DNS2020/noreverb/noisy/fileid_102.wav" type="audio/wav">
-                </audio>
-              </figure>
-              <figure class="version-card">
-                <figcaption>Clean</figcaption>
-                <object class="spectrogram" data="spectrograms/DNS2020/noreverb/clean/fileid_102.png" type="image/png" aria-label="DNS2020 noreverb clean fileid 102 spectrogram">
-                  <span>Spectrogram pending</span>
-                </object>
-                <audio controls preload="none">
-                  <source src="audio/DNS2020/noreverb/clean/fileid_102.wav" type="audio/wav">
-                </audio>
-              </figure>
-              <figure class="version-card version-card-highlight">
-                <figcaption>Our</figcaption>
-                <div class="spectrogram spectrogram-placeholder">
-                  <span>Coming soon</span>
-                </div>
-                <div class="audio-placeholder">Enhanced audio pending</div>
-              </figure>
-            </div>
-          </article>
-
-          <article class="sample-card">
-            <h3>fileid_104</h3>
-            <div class="sample-versions">
-              <figure class="version-card">
-                <figcaption>Noisy</figcaption>
-                <object class="spectrogram" data="spectrograms/DNS2020/noreverb/noisy/fileid_104.png" type="image/png" aria-label="DNS2020 noreverb noisy fileid 104 spectrogram">
-                  <span>Spectrogram pending</span>
-                </object>
-                <audio controls preload="none">
-                  <source src="audio/DNS2020/noreverb/noisy/fileid_104.wav" type="audio/wav">
-                </audio>
-              </figure>
-              <figure class="version-card">
-                <figcaption>Clean</figcaption>
-                <object class="spectrogram" data="spectrograms/DNS2020/noreverb/clean/fileid_104.png" type="image/png" aria-label="DNS2020 noreverb clean fileid 104 spectrogram">
-                  <span>Spectrogram pending</span>
-                </object>
-                <audio controls preload="none">
-                  <source src="audio/DNS2020/noreverb/clean/fileid_104.wav" type="audio/wav">
-                </audio>
-              </figure>
-              <figure class="version-card version-card-highlight">
-                <figcaption>Our</figcaption>
-                <div class="spectrogram spectrogram-placeholder">
-                  <span>Coming soon</span>
-                </div>
-                <div class="audio-placeholder">Enhanced audio pending</div>
-              </figure>
-            </div>
-          </article>
-        </div>
+        <div id="sample-grid" class="sample-grid"></div>
       </section>
 
       <section id="about" class="section about">
@@ -140,5 +47,135 @@
         </p>
       </section>
     </main>
+    <script>
+      const fallbackSamples = [
+        {
+          id: "fileid_101",
+          audio: {
+            noisy: "audio/DNS2020/noreverb/noisy/fileid_101.wav",
+            clean: "audio/DNS2020/noreverb/clean/fileid_101.wav"
+          },
+          spectrograms: {
+            noisy: "spectrograms/DNS2020/noreverb/noisy/fileid_101.png",
+            clean: "spectrograms/DNS2020/noreverb/clean/fileid_101.png"
+          }
+        },
+        {
+          id: "fileid_102",
+          audio: {
+            noisy: "audio/DNS2020/noreverb/noisy/fileid_102.wav",
+            clean: "audio/DNS2020/noreverb/clean/fileid_102.wav"
+          },
+          spectrograms: {
+            noisy: "spectrograms/DNS2020/noreverb/noisy/fileid_102.png",
+            clean: "spectrograms/DNS2020/noreverb/clean/fileid_102.png"
+          }
+        },
+        {
+          id: "fileid_104",
+          audio: {
+            noisy: "audio/DNS2020/noreverb/noisy/fileid_104.wav",
+            clean: "audio/DNS2020/noreverb/clean/fileid_104.wav"
+          },
+          spectrograms: {
+            noisy: "spectrograms/DNS2020/noreverb/noisy/fileid_104.png",
+            clean: "spectrograms/DNS2020/noreverb/clean/fileid_104.png"
+          }
+        }
+      ];
+
+      const versions = [
+        { key: "noisy", label: "Noisy" },
+        { key: "clean", label: "Clean" },
+        { key: "our", label: "Our", highlight: true }
+      ];
+
+      const sampleGrid = document.querySelector("#sample-grid");
+
+      function element(tagName, className, text) {
+        const node = document.createElement(tagName);
+        if (className) {
+          node.className = className;
+        }
+        if (text) {
+          node.textContent = text;
+        }
+        return node;
+      }
+
+      function renderSpectrogram(sample, version) {
+        const imagePath = sample.spectrograms && sample.spectrograms[version.key];
+        if (!imagePath) {
+          const placeholder = element("div", "spectrogram spectrogram-placeholder");
+          placeholder.append(element("span", "", version.key === "our" ? "Coming soon" : "Spectrogram pending"));
+          return placeholder;
+        }
+
+        const object = element("object", "spectrogram");
+        object.data = imagePath;
+        object.type = "image/png";
+        object.setAttribute("aria-label", `DNS2020 noreverb ${version.label.toLowerCase()} ${sample.id} spectrogram`);
+        object.append(element("span", "", "Spectrogram pending"));
+        return object;
+      }
+
+      function renderAudio(sample, version) {
+        const audioPath = sample.audio && sample.audio[version.key];
+        if (!audioPath) {
+          return element("div", "audio-placeholder", version.key === "our" ? "Enhanced audio pending" : "Audio pending");
+        }
+
+        const audio = element("audio");
+        audio.controls = true;
+        audio.preload = "none";
+
+        const source = element("source");
+        source.src = audioPath;
+        source.type = "audio/wav";
+        audio.append(source);
+        return audio;
+      }
+
+      function renderSamples(samples) {
+        sampleGrid.replaceChildren();
+
+        if (!samples.length) {
+          sampleGrid.append(element("article", "sample-card sample-empty", "No samples yet."));
+          return;
+        }
+
+        samples.forEach((sample) => {
+          const article = element("article", "sample-card");
+          article.append(element("h3", "", sample.id));
+
+          const versionGrid = element("div", "sample-versions");
+          versions.forEach((version) => {
+            const figure = element("figure", version.highlight ? "version-card version-card-highlight" : "version-card");
+            figure.append(element("figcaption", "", version.label));
+            figure.append(renderSpectrogram(sample, version));
+            figure.append(renderAudio(sample, version));
+            versionGrid.append(figure);
+          });
+
+          article.append(versionGrid);
+          sampleGrid.append(article);
+        });
+      }
+
+      async function loadSamples() {
+        try {
+          const response = await fetch("samples.json", { cache: "no-store" });
+          if (!response.ok) {
+            throw new Error("Manifest unavailable");
+          }
+          const manifest = await response.json();
+          renderSamples(manifest.samples || fallbackSamples);
+        } catch {
+          renderSamples(fallbackSamples);
+        }
+      }
+
+      loadSamples();
+    </script>
   </body>
 </html>
