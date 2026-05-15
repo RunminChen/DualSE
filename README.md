@@ -4,6 +4,8 @@ Public demo page for DualSE speech enhancement examples.
 
 This repository is intentionally limited to project documentation, a lightweight demo page, processed audio examples, and spectrogram images. The research/source code will be released after acceptance.
 
+Live demo: https://runminchen.github.io/DualSE/
+
 ## Demo
 
 The static demo page is in `index.html`. It is designed to work with GitHub Pages from the repository root.
