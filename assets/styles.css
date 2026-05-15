@@ -123,8 +123,7 @@ a {
 
 .sample-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 24px;
 }
 
 .sample-card {
@@ -140,24 +139,58 @@ a {
 
 .sample-card h3 {
   margin: 0;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
 }
 
-.audio-pair {
+.sample-versions {
   display: grid;
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.audio-pair div {
+.version-card {
   display: grid;
-  gap: 8px;
+  gap: 10px;
+  min-width: 0;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
 }
 
-.audio-pair span {
+.version-card-highlight {
+  border-color: rgba(15, 118, 110, 0.42);
+  background: #f1fbf9;
+}
+
+.version-card figcaption {
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.spectrogram {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(91, 102, 114, 0.18);
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, rgba(15, 118, 110, 0.08), rgba(245, 158, 11, 0.12)),
+    #eef4f7;
+  object-fit: cover;
+}
+
+.spectrogram span {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: rgba(91, 102, 114, 0.78);
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 audio {
@@ -178,7 +211,7 @@ audio {
 }
 
 @media (max-width: 820px) {
-  .sample-grid {
+  .sample-versions {
     grid-template-columns: 1fr;
   }
 

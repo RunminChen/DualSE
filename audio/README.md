@@ -2,13 +2,12 @@
 
 Place public processed demo audio files in this directory.
 
-The current demo page expects these names by default:
+The current page expects the DNS2020 noreverb files here:
 
-- `noisy_01.wav`
-- `dualse_01.wav`
-- `noisy_02.wav`
-- `dualse_02.wav`
-- `noisy_03.wav`
-- `dualse_03.wav`
+```text
+audio/DNS2020/noreverb/noisy/sample_01.wav
+audio/DNS2020/noreverb/clean/sample_01.wav
+audio/DNS2020/noreverb/our/sample_01.wav
+```
 
-You can edit `index.html` if the final filenames are different.
+Use the same filename stem across `noisy`, `clean`, and `our`, for example `sample_02.wav` in all three folders.
