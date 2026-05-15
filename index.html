@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DualSE Demo</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="#">DualSE</a>
+        <a href="#samples">Samples</a>
+        <a href="#about">About</a>
+      </nav>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Speech enhancement demo</p>
+          <h1>DualSE</h1>
+          <p class="lede">
+            Audio examples comparing noisy speech with DualSE enhanced output.
+          </p>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="samples" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Processed examples</p>
+          <h2>Listening Samples</h2>
+        </div>
+
+        <div class="sample-grid">
+          <article class="sample-card">
+            <h3>Sample 01</h3>
+            <div class="audio-pair">
+              <div>
+                <span>Noisy</span>
+                <audio controls preload="none">
+                  <source src="audio/noisy_01.wav" type="audio/wav">
+                </audio>
+              </div>
+              <div>
+                <span>DualSE</span>
+                <audio controls preload="none">
+                  <source src="audio/dualse_01.wav" type="audio/wav">
+                </audio>
+              </div>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <h3>Sample 02</h3>
+            <div class="audio-pair">
+              <div>
+                <span>Noisy</span>
+                <audio controls preload="none">
+                  <source src="audio/noisy_02.wav" type="audio/wav">
+                </audio>
+              </div>
+              <div>
+                <span>DualSE</span>
+                <audio controls preload="none">
+                  <source src="audio/dualse_02.wav" type="audio/wav">
+                </audio>
+              </div>
+            </div>
+          </article>
+
+          <article class="sample-card">
+            <h3>Sample 03</h3>
+            <div class="audio-pair">
+              <div>
+                <span>Noisy</span>
+                <audio controls preload="none">
+                  <source src="audio/noisy_03.wav" type="audio/wav">
+                </audio>
+              </div>
+              <div>
+                <span>DualSE</span>
+                <audio controls preload="none">
+                  <source src="audio/dualse_03.wav" type="audio/wav">
+                </audio>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="section-heading">
+          <p class="eyebrow">Release status</p>
+          <h2>Project Materials</h2>
+        </div>
+        <p>
+          This public repository currently hosts the demo page and processed audio examples.
+          The full implementation will be released after acceptance.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

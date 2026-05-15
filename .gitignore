@@ -1,0 +1,22 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Local environment
+.env
+.venv/
+venv/
+
+# Private research artifacts
+private/
+raw_audio/
+datasets/
+checkpoints/
+models/
+runs/
+wandb/
+
+# Build outputs
+dist/
+build/
+*.log
